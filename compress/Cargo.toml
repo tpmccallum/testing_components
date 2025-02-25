@@ -1,0 +1,24 @@
+[package]
+name = "compress"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen = "0.39.0"
+wit-bindgen-rt = { version = "0.39.0", features = ["bitflags"] }
+zstd = "0.13"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+debug = false
+strip = true
+lto = true
+
+[package.metadata.component]
+target = { path = "wit/world.wit" }
+
+[package.metadata.component.dependencies]

@@ -1,0 +1,23 @@
+[package]
+name = "decompress"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+wit-bindgen = "0.39.0"
+wit-bindgen-rt = { version = "0.39.0", features = ["bitflags"] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+debug = false
+strip = true
+lto = true
+
+[package.metadata.component]
+package = "example:component"
+
+[package.metadata.component.dependencies]

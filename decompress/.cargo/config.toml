@@ -1,0 +1,6 @@
+[build]
+rustflags = ["--cfg=unsafe_op_in_unsafe_fn", "-Astatic_mut_refs"]
+target = "wasm32-wasip2"  
+
+[target.wasm32-wasip2]
+runner = "cargo-component" 

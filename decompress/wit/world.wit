@@ -1,0 +1,6 @@
+package example:component;
+
+/// An example world for the component to target.
+world example {
+    export decompress: func(data: list<u8>) -> list<u8>;
+}
