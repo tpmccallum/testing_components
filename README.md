@@ -12,9 +12,7 @@ Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.07s
 
 ```bash
 cd compress
-wasmtime component run --env PATH=$PATH --dir . --invoke compress target/wasm32-wasip2/debug/compress.wasm
+wasmtime run --invoke compress target/wasm32-wasip1/debug/compress.wasm
 ```
 
-```
-Error: No such file or directory (os error 2)
-```
+
